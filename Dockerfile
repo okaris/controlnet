@@ -1,0 +1,2 @@
+from r8.im/okaris/controlnet@sha256:01593f0c9d3a49585a7c57c2788478fee5ce48adb3dc6d8357f02ed4ae2f4f7e
+copy predict.py /src/predict.py

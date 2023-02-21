@@ -16,7 +16,7 @@ import shutil
 import subprocess
 from utils import get_state_dict_path, download_model, model_dl_urls, annotator_dl_urls
 import torch
-from share import *
+# from share import *
 from cldm.model import load_state_dict
 
 class Predictor(BasePredictor):
@@ -96,7 +96,7 @@ class Predictor(BasePredictor):
             download_ckpt(self, "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned.ckpt")
             path_sd15 = './models/v1-5-pruned.ckpt'
             path_sd15_with_control = './models/control_sd15_{}.pth'.format(case)
-            path_input = './models/{}.ckpt'.format(base_model)
+            path_input = './models/{}.ckpt'.format(base_model.split("/")[-1].split(".")[0])
             path_output = './models/control_sd15_{}_{}.pth'.format(case, base_model)
 
             assert os.path.exists(path_sd15), 'Input path_sd15 does not exists!'
